@@ -10,13 +10,19 @@ source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
+  patches:
+    # github.com/sodre/yq:entry_points: replace scripts with entry-points
+    - github_com__sodre__yq__entry_points.patch
 
 build:
+  number: 1
+  noarch: python
   skip: True  # [win]
-  number: 0
+  entry_points:
+    - yq = yq:main
+    - xq = yq:xq_cli
   script: 
     - python -m pip install --no-deps --ignore-installed .
-    - chmod 755 $PREFIX/bin/{y,x}q
 
 requirements:
   build:
