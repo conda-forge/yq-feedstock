@@ -17,7 +17,6 @@ source:
 build:
   number: 1
   noarch: python
-  skip: True  # [win]
   entry_points:
     - yq = yq:main
     - xq = yq:xq_cli
