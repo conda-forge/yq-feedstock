@@ -13,6 +13,7 @@ source:
   patches:
     # github.com/sodre/yq:entry_points: replace scripts with entry-points
     - github_com__sodre__yq__entry_points.patch
+    - github_com__sodre__yq__fix-jq-errcode.patch
 
 build:
   number: 1
@@ -34,9 +35,14 @@ requirements:
     - jq
 
 test:
+  requires:
+    - pytest
+  source_files:
+    - test
   imports:
     - yq
   commands:
+    - pytest test/test.py
     - yq --help
     - xq --help
     - test $(cat $RECIPE_DIR/meta.yaml | yq -r .package.name) = 'yq'
