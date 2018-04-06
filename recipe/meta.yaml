@@ -13,7 +13,8 @@ source:
   patches:
     # github.com/sodre/yq:entry_points: replace scripts with entry-points
     - github_com__sodre__yq__entry_points.patch
-    - github_com__sodre__yq__fix-jq-errcode.patch
+    # This patch is needed when running on my MacBook Pro, but not on CircleCI
+    #- github_com__sodre__yq__fix-jq-errcode.patch
 
 build:
   number: 0
