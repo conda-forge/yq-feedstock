@@ -1,6 +1,6 @@
 {% set name = "yq" %}
-{% set version = "2.4.1" %}
-{% set sha256 = "4833d4055b0f1c1f1a2fd292421b3472da39c7dc2727d7819efd11065a5fd310" %}
+{% set version = "2.5.0" %}
+{% set sha256 = "e9fd2aa32defcd051058e3b6f665873282aa4eed19e11b1db94fe70847535d4c" %}
 
 package:
   name: {{ name|lower }}
@@ -13,9 +13,11 @@ source:
   patches:
     # github.com/sodre/yq:entry_points: replace scripts with entry-points
     - github_com__sodre__yq__entry_points.patch
+    # This patch is needed when running on my MacBook Pro, but not on CircleCI
+    #- github_com__sodre__yq__fix-jq-errcode.patch
 
 build:
-  number: 1
+  number: 0
   noarch: python
   entry_points:
     - yq = yq:main
@@ -34,9 +36,14 @@ requirements:
     - jq
 
 test:
+  requires:
+    - pytest
+  source_files:
+    - test
   imports:
     - yq
   commands:
+    - pytest test/test.py
     - yq --help
     - xq --help
     - test $(cat $RECIPE_DIR/meta.yaml | yq -r .package.name) = 'yq'
