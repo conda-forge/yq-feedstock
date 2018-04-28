@@ -14,12 +14,15 @@ Summary: jq wrapper for YAML and XML documents
 Current build status
 ====================
 
-All platforms: [![Circle CI](https://circleci.com/gh/conda-forge/yq-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/yq-feedstock)
+All platforms:
+[![noarch](https://img.shields.io/circleci/project/github/conda-forge/yq-feedstock/master.svg?label=noarch)](https://circleci.com/gh/conda-forge/yq-feedstock)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/yq/badges/version.svg)](https://anaconda.org/conda-forge/yq)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/yq/badges/downloads.svg)](https://anaconda.org/conda-forge/yq)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-yq-green.svg)](https://anaconda.org/conda-forge/yq) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/yq.svg)](https://anaconda.org/conda-forge/yq) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/yq.svg)](https://anaconda.org/conda-forge/yq) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/yq.svg)](https://anaconda.org/conda-forge/yq) |
 
 Installing yq
 =============
