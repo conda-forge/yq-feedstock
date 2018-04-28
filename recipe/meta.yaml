@@ -1,6 +1,6 @@
 {% set name = "yq" %}
-{% set version = "2.5.0" %}
-{% set sha256 = "e9fd2aa32defcd051058e3b6f665873282aa4eed19e11b1db94fe70847535d4c" %}
+{% set version = "2.6.0" %}
+{% set sha256 = "c64f763e8409ed55eb055793c26fc347b5a6666b303d49e9d2f8d7cea979df73" %}
 
 package:
   name: {{ name|lower }}
