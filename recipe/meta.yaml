@@ -1,6 +1,6 @@
 {% set name = "yq" %}
-{% set version = "2.5.0" %}
-{% set sha256 = "e9fd2aa32defcd051058e3b6f665873282aa4eed19e11b1db94fe70847535d4c" %}
+{% set version = "2.6.0" %}
+{% set sha256 = "c64f763e8409ed55eb055793c26fc347b5a6666b303d49e9d2f8d7cea979df73" %}
 
 package:
   name: {{ name|lower }}
@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
   patches:
     # github.com/sodre/yq:entry_points: replace scripts with entry-points
-    - github_com__sodre__yq__entry_points.patch
+    #- github_com__sodre__yq__entry_points.patch
     # This patch is needed when running on my MacBook Pro, but not on CircleCI
     #- github_com__sodre__yq__fix-jq-errcode.patch
 
@@ -52,7 +52,7 @@ about:
   home: https://github.com/kislyuk/yq
   license: Apache-2.0
   license_family: Apache
-  license_file: '{{ environ["RECIPE_DIR"] }}/LICENSE'
+  license_file: LICENSE
   summary: 'jq wrapper for YAML and XML documents'
 
   doc_url: https://yq.readthedocs.io/en/latest/
