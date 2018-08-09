@@ -1,6 +1,6 @@
 {% set name = "yq" %}
-{% set version = "2.6.0" %}
-{% set sha256 = "c64f763e8409ed55eb055793c26fc347b5a6666b303d49e9d2f8d7cea979df73" %}
+{% set version = "2.7.0" %}
+{% set sha256 = "f62de3b596056bfb26517b88c1c1775b8364cdae963e36b29ba49623e689a8db" %}
 
 package:
   name: {{ name|lower }}
@@ -22,6 +22,7 @@ build:
   entry_points:
     - yq = yq:main
     - xq = yq:xq_cli
+    - tq = yq:tq_cli
   script: 
     - python -m pip install --no-deps --ignore-installed .
 
@@ -33,6 +34,7 @@ requirements:
     - python
     - pyyaml >=3.11
     - xmltodict >=0.11.0
+    - toml >=0.9.4
     - jq
 
 test:
@@ -46,6 +48,7 @@ test:
     - pytest test/test.py
     - yq --help
     - xq --help
+    - tq --help
     - test $(cat $RECIPE_DIR/meta.yaml | yq -r .package.name) = 'yq'
 
 about:
