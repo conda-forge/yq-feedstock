@@ -7,7 +7,7 @@ Package license: Apache-2.0
 
 Feedstock license: BSD 3-Clause
 
-Summary: jq wrapper for YAML and XML documents
+Summary: Command-line YAML/XML processor - jq wrapper for YAML/XML documents
 
 
 
@@ -117,4 +117,5 @@ Feedstock Maintainers
 =====================
 
 * [@sodre](https://github.com/sodre/)
+* [@xhochy](https://github.com/xhochy/)
 
