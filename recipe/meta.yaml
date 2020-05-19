@@ -1,66 +1,53 @@
 {% set name = "yq" %}
-{% set version = "2.7.2" %}
-{% set sha256 = "f7dafd1e53d1f806ffe11de6da814e231d866595e2faae0dfc38135b8ee79bbb" %}
+{% set version = "2.10.1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
-  patches:
-    # github.com/sodre/yq:entry_points: replace scripts with entry-points
-    #- github_com__sodre__yq__entry_points.patch
-    # This patch is needed when running on my MacBook Pro, but not on CircleCI
-    #- github_com__sodre__yq__fix-jq-errcode.patch
+  sha256: f6252a0757d0c2a9e55b4402e176a7e41a99e0e6dd5be4f9d5a4d651eeb4d6c0
 
 build:
   number: 0
   noarch: python
   entry_points:
-    - yq = yq:main
-    - xq = yq:xq_cli
-    - tq = yq:tq_cli
-  script: 
-    - python -m pip install --no-deps --ignore-installed .
+    - yq=yq:cli
+    - xq=yq:xq_cli
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
-  build:
-    - python
+  host:
     - pip
+    - python
   run:
+    - argcomplete >=1.8.1
     - python
     - pyyaml >=3.11
+    - setuptools
     - xmltodict >=0.11.0
-    - toml >=0.9.4
-    - jq
 
 test:
-  requires:
-    - pytest
-  source_files:
-    - test
   imports:
     - yq
   commands:
-    - pytest test/test.py
+    - pip check
     - yq --help
     - xq --help
-    - tq --help
-    - test $(cat $RECIPE_DIR/meta.yaml | yq -r .package.name) = 'yq'
+  requires:
+    - pip
 
 about:
   home: https://github.com/kislyuk/yq
   license: Apache-2.0
   license_family: Apache
   license_file: LICENSE
-  summary: 'jq wrapper for YAML and XML documents'
-
+  summary: Command-line YAML/XML processor - jq wrapper for YAML/XML documents
   doc_url: https://yq.readthedocs.io/en/latest/
   dev_url: https://github.com/kislyuk/yq
 
 extra:
   recipe-maintainers:
     - sodre
+    - xhochy
