@@ -5,11 +5,13 @@ Home: https://github.com/kislyuk/yq
 
 Package license: Apache-2.0
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/yq-feedstock/blob/master/LICENSE.txt)
 
 Summary: Command-line YAML/XML processor - jq wrapper for YAML/XML documents
 
+Development: https://github.com/kislyuk/yq
 
+Documentation: https://yq.readthedocs.io/en/latest/
 
 Current build status
 ====================
