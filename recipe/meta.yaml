@@ -27,6 +27,7 @@ requirements:
     - python
     - pyyaml >=3.11
     - setuptools
+    - toml
     - xmltodict >=0.11.0
 
 test:
