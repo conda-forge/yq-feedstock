@@ -20,11 +20,11 @@ build:
 requirements:
   host:
     - pip
-    - python
+    - python >=3.6
   run:
     - argcomplete >=1.8.1
     - jq
-    - python
+    - python >=3.6
     - pyyaml >=3.11
     - setuptools
     - toml
