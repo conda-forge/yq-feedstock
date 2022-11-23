@@ -1,5 +1,5 @@
 {% set name = "yq" %}
-{% set version = "2.13.0" %}
+{% set version = "3.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: fd131fdb1f56716ad8d44cd9eaaf7d3b22d39ba8861ea64a409cc3f4ae263db8
+  sha256: 30a84aa22486c749ba269256bd586c0bcd370b7e2a71e76c3924ead4867e74f2
 
 build:
   number: 0
