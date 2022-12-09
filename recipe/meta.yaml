@@ -21,6 +21,7 @@ requirements:
   host:
     - pip
     - python >=3.6
+    - setuptools_scm
   run:
     - argcomplete >=1.8.1
     - jq
