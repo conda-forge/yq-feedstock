@@ -1,5 +1,5 @@
 {% set name = "yq" %}
-{% set version = "3.1.0" %}
+{% set version = "3.1.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 30a84aa22486c749ba269256bd586c0bcd370b7e2a71e76c3924ead4867e74f2
+  sha256: 853f342b1562ddee979038ec8ecee5405cdd9b6a7cb81ed6cdb8018c9e802633
 
 build:
   number: 0
@@ -26,9 +26,9 @@ requirements:
     - argcomplete >=1.8.1
     - jq
     - python >=3.6
-    - pyyaml >=3.11
+    - pyyaml >=5.3.1
     - setuptools
-    - toml
+    - toml >=0.10.0
     - xmltodict >=0.11.0
 
 test:
