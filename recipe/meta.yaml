@@ -1,5 +1,5 @@
 {% set name = "yq" %}
-{% set version = "3.1.1" %}
+{% set version = "3.2.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 853f342b1562ddee979038ec8ecee5405cdd9b6a7cb81ed6cdb8018c9e802633
+  sha256: e04dfc8670fcba5bba75e2a24940a544aa8c2789cd4c5171241a1275c8ab2f57
 
 build:
   number: 0
@@ -23,6 +23,7 @@ requirements:
     - python >=3.6
     - setuptools_scm
   run:
+    - tomlkit >=0.11.6
     - argcomplete >=1.8.1
     - jq
     - python >=3.6
