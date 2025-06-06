@@ -24,7 +24,7 @@ build:
 requirements:
   host:
     - pip
-    - python ${{ python_min }}
+    - python ${{ python_min }}.*
     - setuptools
     - setuptools_scm
   run:
@@ -39,14 +39,13 @@ requirements:
 
 tests:
   - python:
+      python_version: ${{ python_min }}.*
       imports:
         - yq
   - requirements:
       run:
-        - pip
-        - python ${{ python_min }}
+        - python ${{ python_min }}.*
     script:
-      - pip check
       - yq --help
       - xq --help
 
