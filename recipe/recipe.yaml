@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: yq
-  version: 3.4.3
+  version: 4.0.0
 
 package:
   name: ${{ name|lower }}
@@ -10,10 +10,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
-  sha256: ba586a1a6f30cf705b2f92206712df2281cd320280210e7b7b80adcb8f256e3b
+  sha256: cff60829168ccf30392257215eb66b85dc1690530bdb48bea53f37f1b24dd1a4
 
 build:
-  number: 2
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv
   python:
@@ -25,21 +25,18 @@ requirements:
   host:
     - pip
     - python ${{ python_min }}.*
-    - setuptools
-    - setuptools_scm
+    - hatchling
   run:
     - tomlkit >=0.11.6
     - argcomplete >=1.8.1
-    - jq
     - python >=${{ python_min }}
     - pyyaml >=5.3.1
-    - setuptools
-    - toml >=0.10.0
     - xmltodict >=0.11.0
-
 tests:
   - python:
-      python_version: ${{ python_min }}.*
+      python_version:
+        - ${{ python_min }}.*
+        - '*'
       imports:
         - yq
   - requirements:
