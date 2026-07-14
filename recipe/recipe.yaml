@@ -13,7 +13,7 @@ source:
   sha256: ab3fc344dc4a39d833d328f080a6e794c1cb7243b05c0076ac1edce3d22caabd
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv
   python:
@@ -32,6 +32,7 @@ requirements:
     - python >=${{ python_min }}
     - pyyaml >=5.3.1
     - xmltodict >=0.11.0
+    - jq >=1.8
 tests:
   - python:
       python_version:
@@ -43,6 +44,7 @@ tests:
       run:
         - python ${{ python_min }}.*
     script:
+      - echo '- 1' | yq '.'
       - yq --help
       - xq --help
 
