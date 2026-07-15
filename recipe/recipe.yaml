@@ -44,6 +44,7 @@ tests:
       run:
         - python ${{ python_min }}.*
     script:
+      - pip check
       - echo '- 1' | yq '.'
       - yq --help
       - xq --help
