@@ -26,6 +26,7 @@ requirements:
     - pip
     - python ${{ python_min }}.*
     - hatchling
+    - hatch-vcs
   run:
     - tomlkit >=0.11.6
     - argcomplete >=1.8.1
