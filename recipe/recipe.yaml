@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: yq
-  version: 4.2.0
+  version: "4.3.0"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
-  sha256: 53854078bade13fd69eef85d77dcc513125a0bce2f8f1ef8b466e655ce1be9e6
+  sha256: 8c8d0b0022e7c8226154d5a64195f2d1f5346f40063b3cb51e58ee3303ac9190
 
 build:
   number: 0
